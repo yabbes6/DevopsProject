@@ -1,24 +1,23 @@
-import logo from './logo.svg';
+import React , {useState} from "react";
 import './App.css';
+import UserForm from './Components/Users/UserForm';
+import UsersList from './Components/Users/UsersList';
+import Card from "./Components/UI/Card";
 
 function App() {
+  const [newData , setNewData] = useState([]);
+
+  const dataUser = (uName, uAge)=>{
+    
+      setNewData((prevUser)=>{
+        return [...prevUser,{name: uName, age: uAge, id:Math.random().toString()}];});
+  };
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <React.Fragment>
+      <Card>ADMIN</Card>
+      <UserForm onAddUser={dataUser} />
+      <UsersList users ={newData}/>
+    </React.Fragment>
   );
 }
 

@@ -1,0 +1,32 @@
+.backdrop{
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100vh;
+    z-index: 10;
+    background: rgba(0, 0, 0, 0.75);
+}
+
+.modal{
+    display: block;
+    position: fixed;
+    top: 30vh;
+    left: 25%;
+    width: 50%;
+    z-index: 100;
+    overflow: hidden;
+}
+
+.header{
+    background: #4f005f;
+    padding: 1rem;
+}
+
+.header h2 {
+    margin: 0;
+    color:aliceblue;
+}
+.content{
+    padding: 20px 0 20px 0;
+}
