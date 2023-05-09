@@ -1,0 +1,7 @@
+FROM nginx:alpine
+WORKDIR /THIRD-APP
+COPY package*.json ./
+RUN npm install
+COPY . .
+RUN npm start
+EXPOSE 3000
